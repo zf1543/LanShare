@@ -7,10 +7,11 @@
 #include <QMessageBox>
 #include <QHostInfo>
 #include <QDir>
-#include <QCoreApplication> // 用于获取程序运行目录
+#include <QCoreApplication> // 获取程序运行目录
 
 const quint16 UDP_PORT = 45454;
 const quint16 TCP_START_PORT = 45455;
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -266,6 +267,7 @@ void MainWindow::onReadClient()
         }
     }
 }
+
 
 
 
