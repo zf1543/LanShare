@@ -8,7 +8,7 @@ class PeerModel : public QAbstractListModel
 {
     Q_OBJECT
 
-public:
+公共:
     explicit PeerModel(QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -19,7 +19,8 @@ public:
     void clear();
 
 private:
-    QStringList m_peers; // 简单的用 StringList 存 IP
+    QStringList m_peers;
 };
 
 #endif // PEERMODEL_H
+
