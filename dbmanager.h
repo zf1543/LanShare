@@ -4,10 +4,9 @@
 #include <QString>
 #include <QSqlDatabase>
 
-// 这是一个单例类，专门用来管理数据库
 class DbManager
 {
-public:
+公共:
     static DbManager& instance();
     bool init();
     void addHistory(const QString &type, const QString &filename, const QString &targetIp);
@@ -19,3 +18,4 @@ private:
 };
 
 #endif // DBMANAGER_H
+
