@@ -10,7 +10,11 @@ class PeerModel : public QAbstractListModel
 
 公共:
     explicit PeerModel(QObject *parent = nullptr);
-
+   /*
+     * 返回模型的行数
+     * parent - 父索引，一般忽略
+     * 用于告诉视图有多少行数据
+     */
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
@@ -23,5 +27,6 @@ private:
 };
 
 #endif // PEERMODEL_H
+
 
 
