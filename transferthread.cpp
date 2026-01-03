@@ -12,7 +12,6 @@ void SendThread::run()
 {
     QTcpSocket socket;
 
-    // 禁用系统代理，防止连本地IP时报错 "Proxy type is invalid"
     socket.setProxy(QNetworkProxy::NoProxy);
 
     socket.connectToHost(m_ip, m_port);
@@ -63,5 +62,6 @@ void SendThread::run()
     emit logMessage("发送完毕！");
     emit finished(true);
 }
+
 
 
