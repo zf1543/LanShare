@@ -27,7 +27,6 @@ bool DbManager::init()
         qDebug() << "Error: connection with database failed";
         return false;
     }
-
     // 创建表结构
     QSqlQuery query;
     bool success = query.exec("CREATE TABLE IF NOT EXISTS transfer_history ("
@@ -69,4 +68,5 @@ QStringList DbManager::getAllHistory()
     }
     return list;
 }
+
 
