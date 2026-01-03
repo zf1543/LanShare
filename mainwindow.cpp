@@ -72,7 +72,7 @@ void MainWindow::log(const QString &msg)
     ui->textEditLog->append(time + msg);
 }
 
-// === 关于按钮 ===
+// === 按钮 ===
 void MainWindow::on_btnAbout_clicked()
 {
     QString info = "软件名称：局域网文件快传系统 (LanShare v1.0)\n\n"
@@ -267,6 +267,7 @@ void MainWindow::onReadClient()
         }
     }
 }
+
 
 
 
