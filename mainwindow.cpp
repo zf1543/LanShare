@@ -119,7 +119,7 @@ void MainWindow::processPendingDatagrams()
     }
 }
 
-// === 发送文件 ===
+// === 文件发送 ===
 void MainWindow::on_btnSelectFile_clicked()
 {
     // 支持多选文件
@@ -267,6 +267,7 @@ void MainWindow::onReadClient()
         }
     }
 }
+
 
 
 
