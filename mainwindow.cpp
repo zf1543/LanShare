@@ -14,15 +14,15 @@ const quint16 TCP_START_PORT = 45455;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-    , m_peerModel(new PeerModel(this))
-    , m_udpSocket(new QUdpSocket(this))
-    , m_tcpServer(new QTcpServer(this))
-    , m_myTcpPort(0)
+    ， ui(new Ui::MainWindow)
+    ， m_peerModel(new PeerModel(this))
+    ， m_udpSocket(new QUdpSocket(this))
+    ， m_tcpServer(new QTcpServer(this))
+    ， m_myTcpPort(0)
 {
     ui->setupUi(this);
 
-    // 设置窗口图标 (确保你有按照上一步教程添加 logo.png 和 res.qrc)
+    // 设置窗口图标
     this->setWindowIcon(QIcon(":/logo.png"));
 
     // 1. 数据库初始化
@@ -265,3 +265,4 @@ void MainWindow::onReadClient()
         }
     }
 }
+
