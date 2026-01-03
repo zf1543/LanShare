@@ -17,6 +17,7 @@ DbManager::DbManager()
 
 bool DbManager::init()
 {
+    
     // 连接 SQLite 数据库
     m_db = QSqlDatabase::addDatabase("QSQLITE");
     // 数据库文件会生成在运行目录
@@ -60,11 +61,12 @@ QStringList DbManager::getAllHistory()
     QSqlQuery query("SELECT * FROM transfer_history ORDER BY id DESC LIMIT 50");
     while (query.next()) {
         QString record = QString("[%1] %2: %3 (对方: %4)")
-                             .arg(query.value("timestamp").toString())
-                             .arg(query.value("type").toString())
-                             .arg(query.value("filename").toString())
-                             .arg(query.value("remote_ip").toString());
+                             。arg(query.value("timestamp").toString())
+                             。arg(query.value("type").toString())
+                             。arg(query.value("filename").toString())
+                             。arg(query.value("remote_ip").toString());
         list.append(record);
     }
     return list;
 }
+
