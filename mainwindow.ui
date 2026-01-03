@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>850</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>局域网文件快传系统 (Qt 2025)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="layoutLeft">
+      <item>
+       <widget class="QLabel" name="labelPeer">
+        <property name="text">
+         <string>在线用户 (自动发现):</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListView" name="listViewPeers">
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnRefresh">
+        <property name="text">
+         <string> 刷新列表</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnAbout">
+        <property name="text">
+         <string> 关于软件...</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="layoutRight">
+      <item>
+       <widget class="QLabel" name="labelLog">
+        <property name="text">
+         <string>操作日志与状态:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="textEditLog">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QProgressBar" name="progressBar">
+        <property name="value">
+         <number>0</number>
+        </property>
+        <property name="format">
+         <string>等待传输... %p%</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="layoutBtns">
+        <item>
+         <widget class="QPushButton" name="btnSelectFile">
+          <property name="text">
+           <string> 选择文件...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnSend">
+          <property name="text">
+           <string> 发送给选中用户</string>
+          </property>
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
