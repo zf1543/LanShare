@@ -1,7 +1,7 @@
 #include "transferthread.h"
 #include <QFileInfo>
 #include <QDataStream>
-#include <QNetworkProxy> // 必须引入这个
+#include <QNetworkProxy> 
 
 SendThread::SendThread(QString ip, int port, QString filePath, QObject *parent)
     : QThread(parent), m_ip(ip), m_port(port), m_filePath(filePath)
@@ -58,8 +58,9 @@ void SendThread::run()
 
     socket.disconnectFromHost();
     socket.waitForDisconnected();
-    file.close();
+    文件。close();
 
     emit logMessage("发送完毕！");
     emit finished(true);
 }
+
