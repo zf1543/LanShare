@@ -5,36 +5,33 @@ PeerModel::PeerModel(QObject *parent)
 {
 }
 
-int PeerModel::rowCount(const QModelIndex &parent) const
+int PeerModel::rowCount(const QModelIndex &) const
 {
-    if (parent.isValid())
-        return 0;
-    return m_peers.count();
+    return m_peers.size();
 }
 
 QVariant PeerModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid())
+    if (!index.isValid() || role != Qt::DisplayRole)
         return QVariant();
-
-    if (role == Qt::DisplayRole) {
-        return m_peers.at(index.row()); // 显示 IP 地址
-    }
-    return QVariant();
+    return m_peers.at(index.row());
 }
 
 void PeerModel::addPeer(const QString &ip)
 {
-    if (m_peers.contains(ip)) return;
+    if (m_peerSet.contains(ip))
+        return;   // 🔴 已存在则忽略
 
-    beginInsertRows(QModelIndex(), m_peers.count(), m_peers.count());
+    beginInsertRows(QModelIndex(), m_peers.size(), m_peers.size());
     m_peers.append(ip);
+    m_peerSet.insert(ip);
     endInsertRows();
 }
 
-QString PeerModel::getPeerIp(int row)
+QString PeerModel::getPeerIp(int row) const
 {
-    if (row < 0 || row >= m_peers.count()) return "";
+    if (row < 0 || row >= m_peers.size())
+        return QString();
     return m_peers.at(row);
 }
 
@@ -42,5 +39,6 @@ void PeerModel::clear()
 {
     beginResetModel();
     m_peers.clear();
+    m_peerSet.clear();
     endResetModel();
 }
