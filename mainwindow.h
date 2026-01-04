@@ -14,9 +14,13 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-public:
+公共:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+// ================== 网络发现（UDP） ==================
+// 第一阶段实现：基于 UDP 广播的在线设备发现
+// 后续可拆分为独立 DeviceDiscoverer 模块
+
 
 private slots:
     void on_btnRefresh_clicked();
@@ -40,3 +44,4 @@ private:
     void sendUdpBroadcast();
 };
 #endif // MAINWINDOW_H
+
