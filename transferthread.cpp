@@ -57,11 +57,12 @@ void SendThread::run()
 
     socket.disconnectFromHost();
     socket.waitForDisconnected();
-    文件。close();
+    file.close();
 
     emit logMessage("发送完毕！");
     emit finished(true);
 }
+
 
 
 
