@@ -9,7 +9,7 @@
 class SendThread : public QThread
 {
     Q_OBJECT
-public:
+公共:
     SendThread(QString ip, int port, QString filePath, QObject *parent = nullptr);
 
 protected:
@@ -21,9 +21,10 @@ signals:
     void finished(bool success);
 
 private:
-    QString m_ip;
-    int m_port;
-    QString m_filePath;
+    QString m_ip;         ///< 目标主机IP地址
+    int m_port;           ///< 目标主机端口号
+    QString m_filePath;   ///< 待发送文件的本地绝对路径
 };
 
 #endif // TRANSFERTHREAD_H
+
