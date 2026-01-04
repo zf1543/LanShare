@@ -13,9 +13,11 @@ class DbManager
     QStringList getAllHistory();
 
 private:
+// 禁用拷贝构造和赋值运算符，防止单例被拷贝
     DbManager();
     QSqlDatabase m_db;
 };
 
 #endif // DBMANAGER_H
+
 
