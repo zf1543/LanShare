@@ -3,30 +3,24 @@
 
 #include <QAbstractListModel>
 #include <QStringList>
+#include <QSet>
 
 class PeerModel : public QAbstractListModel
 {
     Q_OBJECT
-
-公共:
+public:
     explicit PeerModel(QObject *parent = nullptr);
-   /*
-     * 返回模型的行数
-     * parent - 父索引，一般忽略
-     * 用于告诉视图有多少行数据
-     */
+
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
     void addPeer(const QString &ip);
-    QString getPeerIp(int row);
+    QString getPeerIp(int row) const;
     void clear();
 
 private:
     QStringList m_peers;
+    QSet<QString> m_peerSet;   // 🔴 用于去重
 };
 
-#endif // PEERMODEL_H
-
-
-
+#endif
